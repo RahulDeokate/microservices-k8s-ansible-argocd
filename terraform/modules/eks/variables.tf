@@ -29,3 +29,15 @@ variable "max_size" {
 variable "min_size" {
   description = "min node group size"
 }
+
+variable "ami_type" {
+  description = "ami type"
+}
+
+variable "instance_types" {
+  description = "tinstance types"
+}
+
+variable "disk_size" {
+  description = "disk size"
+}
