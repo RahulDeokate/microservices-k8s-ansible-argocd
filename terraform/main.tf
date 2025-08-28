@@ -16,10 +16,11 @@ module "security-groups" {
 module "eks" {
   source = "./modules/eks"
   cluster_name = var.cluster_name
-  cluster_role_arn = var.cluster_role_arn
-  node_role_arn = var.node_role_arn
   node_group_name = var.node_group_name
-  subnet_ids = var.subnet_ids
+  subnet_id1 = module.vpc.subnet_1_id
+  subnet_id2 = module.vpc.subnet_2_id
+  cluster_role_arn = module.security-groups.eks_cluster_role_arn
+  node_role_arn = module.security-groups.eks_node_role
   desired_size = var.desired_size
   max_size = var.max_size
   min_size = var.min_size

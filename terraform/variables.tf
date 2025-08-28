@@ -30,18 +30,6 @@ variable "cluster_name" {
   description = "name of the cluster"
 }
 
-variable "cluster_role_arn" {
-  description = "cluster role arn"
-}
-
-variable "node_role_arn" {
-  description = "node role arn"
-}
-
-variable "subnet_ids" {
-  description = "subnet ids"
-}
-
 variable "node_group_name" {
   description = "node group name"
 }
@@ -64,6 +52,7 @@ variable "ami_type" {
 
 variable "instance_types" {
   description = "instance types"
+  type = list(string)
 }
 
 variable "disk_size" {
