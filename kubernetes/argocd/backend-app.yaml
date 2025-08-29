@@ -11,7 +11,7 @@ spec:
     path: kubernetes/base/backend
   destination:
     server: https://kubernetes.default.svc
-    namespace: bdev
+    namespace: dev
   syncPolicy:
     automated:
       prune: true
