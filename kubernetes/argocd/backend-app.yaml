@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/RahulDeokate/microservices-k8s-ansible-argocd.git
+    targetRevision: HEAD
+    path: kubernetes/base/backend
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: bdev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
